@@ -15,8 +15,6 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
-import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat
-import dev.rajas.libs.smartdialogview.*
 import dev.rajas.libs.smartdialogview.buttons.NegativeButton
 import dev.rajas.libs.smartdialogview.buttons.NeutralButton
 import dev.rajas.libs.smartdialogview.buttons.PositiveButton
@@ -55,8 +53,8 @@ internal class SmartCurvedAlertDialog(
         val inflater = LayoutInflater.from(customContext)
         val view = inflater.inflate(R.layout.dialog_skinned_view, null)
         initDialogViews(view)
-        applyStyleToDialog(style)
-        applySkinToDialog(category, style)
+        applyStyleToDialog()
+        applySkinToDialog()
         setContent()
         setListeners()
         builder.setView(view)
@@ -70,8 +68,6 @@ internal class SmartCurvedAlertDialog(
         return alertDialog
     }
 
-
-
     private fun initDialogViews(view: View) {
         uiDialogBody = view.findViewById(R.id.uiDialogBody)
         uiRoundHead = view.findViewById(R.id.uiRoundHead)
@@ -84,27 +80,33 @@ internal class SmartCurvedAlertDialog(
         uiDialogIcon = view.findViewById(R.id.uiDialogIcon)
     }
 
-    private fun applySkinToDialog(category: DialogCategory?, style: DialogStyle?) {
+    private fun applySkinToDialog() {
         when (category) {
             DialogCategory.SUCCESS -> {
                 titleView.setTextColor(ContextCompat.getColor(_context,R.color.green))
                 uiIconBackground.setBackgroundResource(R.drawable.bg_round_green)
                 uiDialogIcon.setImageDrawable(ContextCompat.getDrawable(_context,R.drawable.ic_success_tick))
-                if(positiveButton!=null && negativeButton==null && neutralButton==null) {
+                if(positiveButton!=null) {
                     if(style == DialogStyle.SQUARE){
-                        positiveButtonView.setBackgroundDrawable(
-                            ContextCompat.getDrawable(
-                                _context,
-                                R.drawable.bg_button_round_square_green
-                            )
-                        )
+                        positiveButtonView.setButtonBackground(R.drawable.bg_button_round_square_green)
                     }else {
-                        positiveButtonView.setBackgroundDrawable(
-                            ContextCompat.getDrawable(
-                                _context,
-                                R.drawable.bg_button_round_rect_green
-                            )
-                        )
+                        positiveButtonView.setButtonBackground(R.drawable.bg_button_round_rect_green)
+                    }
+                }
+
+                if(negativeButton!=null) {
+                    if(style == DialogStyle.SQUARE){
+                        negativeButtonView.setButtonBackground(R.drawable.bg_button_square_rect_orange)
+                    }else {
+                        negativeButtonView.setButtonBackground(R.drawable.bg_button_round_rect_orange)
+                    }
+                }
+
+                if(neutralButton!=null) {
+                    if(style == DialogStyle.SQUARE){
+                        neutralButtonView.setButtonBackground(R.drawable.bg_button_round_square_grey)
+                    }else {
+                        neutralButtonView.setButtonBackground(R.drawable.bg_button_round_rect_grey)
                     }
                 }
             }
@@ -112,21 +114,27 @@ internal class SmartCurvedAlertDialog(
                 titleView.setTextColor(ContextCompat.getColor(_context,R.color.red))
                 uiIconBackground.setBackgroundResource(R.drawable.bg_round_red)
                 uiDialogIcon.setImageDrawable(ContextCompat.getDrawable(_context,R.drawable.ic_error_close))
-                if(positiveButton!=null && negativeButton==null && neutralButton==null) {
+                if(positiveButton!=null) {
                     if(style == DialogStyle.SQUARE){
-                        positiveButtonView.setBackgroundDrawable(
-                            ContextCompat.getDrawable(
-                                _context,
-                                R.drawable.bg_button_square_rect_red
-                            )
-                        )
+                        positiveButtonView.setButtonBackground(R.drawable.bg_button_square_rect_red)
                     }else {
-                        positiveButtonView.setBackgroundDrawable(
-                            ContextCompat.getDrawable(
-                                _context,
-                                R.drawable.bg_button_round_rect_red
-                            )
-                        )
+                        positiveButtonView.setButtonBackground(R.drawable.bg_button_round_rect_red)
+                    }
+                }
+
+                if(negativeButton!=null) {
+                    if(style == DialogStyle.SQUARE){
+                        negativeButtonView.setButtonBackground(R.drawable.bg_button_square_rect_orange)
+                    }else {
+                        negativeButtonView.setButtonBackground(R.drawable.bg_button_round_rect_orange)
+                    }
+                }
+
+                if(neutralButton!=null) {
+                    if(style == DialogStyle.SQUARE){
+                        neutralButtonView.setButtonBackground(R.drawable.bg_button_round_square_grey)
+                    }else {
+                        neutralButtonView.setButtonBackground(R.drawable.bg_button_round_rect_grey)
                     }
                 }
             }
@@ -134,52 +142,68 @@ internal class SmartCurvedAlertDialog(
                 titleView.setTextColor(ContextCompat.getColor(_context,R.color.orange))
                 uiIconBackground.setBackgroundResource(R.drawable.bg_round_orange)
                 uiDialogIcon.setImageDrawable(ContextCompat.getDrawable(_context,R.drawable.ic_information))
-                if(positiveButton!=null && negativeButton==null && neutralButton==null) {
+                if(positiveButton!=null) {
 
                     if(style == DialogStyle.SQUARE){
-                        positiveButtonView.setBackgroundDrawable(
-                            ContextCompat.getDrawable(
-                                _context,
-                                R.drawable.bg_button_square_rect_orange
-                            )
-                        )
+                        positiveButtonView.setButtonBackground(R.drawable.bg_button_square_rect_orange)
                     }else {
-                        positiveButtonView.setBackgroundDrawable(
-                            ContextCompat.getDrawable(
-                                _context,
-                                R.drawable.bg_button_round_rect_orange
-                            )
-                        )
+                        positiveButtonView.setButtonBackground(R.drawable.bg_button_round_rect_orange)
+                    }
+                }
+                if(negativeButton!=null) {
+                    if(style == DialogStyle.SQUARE){
+                        negativeButtonView.setButtonBackground(R.drawable.bg_button_round_square_blue)
+                    }else {
+                        negativeButtonView.setButtonBackground(R.drawable.bg_button_round_rect_blue)
+                    }
+                }
+                if(neutralButton!=null) {
+                    if(style == DialogStyle.SQUARE){
+                        neutralButtonView.setButtonBackground(R.drawable.bg_button_round_square_grey)
+                    }else {
+                        neutralButtonView.setButtonBackground(R.drawable.bg_button_round_rect_grey)
                     }
                 }
             }
             else -> {
                 titleView.setTextColor(ContextCompat.getColor(_context,R.color.blue))
-                uiIconBackground.setBackgroundResource(R.drawable.bg_round_blue)
+                uiIconBackground.background = ContextCompat.getDrawable(_context,R.drawable.bg_round_blue)
                 uiDialogIcon.setImageDrawable(ContextCompat.getDrawable(_context,R.drawable.ic_information))
                 if(positiveButton!=null) {
                     if(style == DialogStyle.SQUARE){
-                        positiveButtonView.setBackgroundDrawable(
-                            ContextCompat.getDrawable(
-                                _context,
-                                R.drawable.bg_button_round_square_blue
-                            )
-                        )
+                        positiveButtonView.setButtonBackground(R.drawable.bg_button_round_square_blue)
                     }else {
-                        positiveButtonView.setBackgroundDrawable(
-                            ContextCompat.getDrawable(
-                                _context,
-                                R.drawable.bg_button_round_rect_blue
-                            )
-                        )
+                        positiveButtonView.setButtonBackground(R.drawable.bg_button_round_rect_blue)
                     }
                 }
 
+                if(negativeButton!=null) {
+                    if(style == DialogStyle.SQUARE){
+                        negativeButtonView.setButtonBackground(R.drawable.bg_button_square_rect_orange)
+                    }else {
+                        negativeButtonView.setButtonBackground(R.drawable.bg_button_round_rect_orange)
+                    }
+                }
+
+                if(neutralButton!=null) {
+                    if(style == DialogStyle.SQUARE){
+                        neutralButtonView.setButtonBackground(R.drawable.bg_button_round_square_grey)
+                    }else {
+                        neutralButtonView.setButtonBackground(R.drawable.bg_button_round_rect_grey)
+                    }
+                }
             }
         }
     }
 
-    private fun applyStyleToDialog(style: DialogStyle?) {
+    private fun AppCompatButton.setButtonBackground(bgButton: Int) {
+        this.background = ContextCompat.getDrawable(
+            _context,
+            bgButton
+        )
+    }
+
+    private fun applyStyleToDialog() {
         uiRoundHead.background = ContextCompat.getDrawable(_context, R.drawable.bg_round_white)
         if (style == DialogStyle.SQUARE) {
             uiDialogBody.setBackgroundResource(R.drawable.bg_square_rect_white)
@@ -193,8 +217,8 @@ internal class SmartCurvedAlertDialog(
         if (!title.isNullOrEmpty()) {
             titleView.text = title
             titleColor?.let {color->
-                if(color!=0)
-                titleView.setTextColor(color)
+                if(color!=null && color!=0)
+                    titleView.setTextColor(color)
             }
 
         }else titleView.visibility = View.GONE
@@ -202,7 +226,7 @@ internal class SmartCurvedAlertDialog(
         if (!content.isNullOrEmpty()) {
             contentView.text = content
             contentColor?.let { color->
-                if(color!=0)
+                if(color!=null && color!=0)
                     contentView.setTextColor(color)
             }
         }else contentView.visibility = View.GONE
@@ -218,7 +242,7 @@ internal class SmartCurvedAlertDialog(
             positiveButtonView.text = positiveButton.text
 
             if (positiveButton.background != null) {
-                positiveButtonView.setBackgroundDrawable(positiveButton.background)
+                positiveButtonView.background = positiveButton.background
             }
 
             if (positiveButton.textColor != 0)
@@ -233,7 +257,7 @@ internal class SmartCurvedAlertDialog(
             negativeButtonView.text = negativeButton.text
 
             if (negativeButton.background != null) {
-                negativeButtonView.setBackgroundDrawable(negativeButton.background)
+                negativeButtonView.background = negativeButton.background
             }
 
             if (negativeButton.textColor != 0)
@@ -248,7 +272,7 @@ internal class SmartCurvedAlertDialog(
             neutralButtonView.text = neutralButton.text
 
             if (neutralButton.background != null) {
-                neutralButtonView.setBackgroundDrawable(neutralButton.background)
+                neutralButtonView.background = neutralButton.background
             }
 
             if (neutralButton.textColor != 0)

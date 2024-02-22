@@ -1,7 +1,9 @@
 jdk:
+  - openjdk8
+  - openjdk11
   - openjdk17
 before_install:
   - ./scripts/prepareJitpackEnvironment.sh
 install:
       - FILE="-Dfile=smart-dialog-view-release.aar"
-      - mvn install:install-file $FILE -DgroupId=com.github.rajagcs08 -DartifactId=smart-dialog-view -Dversion=1.0.3 -Dpackaging=aar -DgeneratePom=true
+      - mvn install:install-file $FILE -DgroupId=com.github.rajagcs08 -DartifactId=smart-dialog-view -Dversion=1.0.4 -Dpackaging=aar -DgeneratePom=true

@@ -4,5 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#4CAF50</color>
     <color name="lightGreen">#AAECAC</color>
-    <color name="merun">#A11704</color>
+    <color name="maroon">#A11704</color>
+    <color name="pink">#E1024E</color>
+    <color name="yellow">#C8B401</color>
+    <color name="sky_blue">#04C690</color>
 </resources>

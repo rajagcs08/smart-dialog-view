@@ -28,10 +28,10 @@ class MainActivity : AppCompatActivity() {
                 .setContent("Your account has been created successfully, For more detail you can contact your higher management or also you can drop a mail to admin team.")
                 .setCancellable(false)
                 .setTitleColor(getColor(R.color.black))
-                .setContentColor(getColor(R.color.merun))
+                .setContentColor(getColor(R.color.maroon))
                 .setDialogPosition(DialogPosition.CENTER)
                 .setDialogCategory(DialogCategory.SUCCESS)
-                .setPositiveButton(PositiveButton(text ="Okay", textColor = getColor(R.color.white), onClickListener = neutralButtonCLickListener))
+                .setPositiveButton(PositiveButton(text ="Okay", textColor = getColor(R.color.white), onClickListener = positiveButtonCLickListener))
                 .show()
         }
 
@@ -40,9 +40,11 @@ class MainActivity : AppCompatActivity() {
                 .setTitle("Error!!")
                 .setContent("Your account has been created successfully, For more detail you can contact your higher management or also you can drop a mail to admin team.")
                 .setCancellable(false)
+                .setDialogStyle(DialogStyle.SQUARE)
                 .setDialogPosition(DialogPosition.TOP)
                 .setDialogCategory(DialogCategory.ERROR)
-                .setPositiveButton(PositiveButton(text ="Okay", textColor = getColor(R.color.white), onClickListener = neutralButtonCLickListener))
+                .setNegativeButton(NegativeButton(text="Yellow"))
+                .setPositiveButton(PositiveButton(text ="Okay", textColor = getColor(R.color.white), onClickListener = positiveButtonCLickListener))
                 .show()
         }
 
@@ -52,7 +54,8 @@ class MainActivity : AppCompatActivity() {
                 .setContent("Your account has been created successfully, For more detail you can contact your higher management or also you can drop a mail to admin team.")
                 .setCancellable(false)
                 .setDialogCategory(DialogCategory.WARNING)
-                .setPositiveButton(PositiveButton(text ="Okay", textColor = getColor(R.color.white), onClickListener = neutralButtonCLickListener))
+                .setNegativeButton(NegativeButton(text="Sky Blue", background = getDrawable(R.drawable.bg_button_round_rect_sky_blue),))
+                .setPositiveButton(PositiveButton(text ="Okay", textColor = getColor(R.color.white), onClickListener = positiveButtonCLickListener))
                 .show()
         }
 
@@ -64,20 +67,17 @@ class MainActivity : AppCompatActivity() {
                 .setDialogStyle(DialogStyle.SQUARE)
                 .setDialogCategory(DialogCategory.INFORMATION)
                 .setNegativeButton(NegativeButton(text = "Cancel"))
-                .setPositiveButton(PositiveButton(text ="Okay", textColor = getColor(R.color.white), onClickListener = neutralButtonCLickListener))
+                .setPositiveButton(PositiveButton(text ="Okay", textColor = getColor(R.color.white), onClickListener = positiveButtonCLickListener))
                 .show()
         }
     }
 
     val neutralButtonCLickListener =  View.OnClickListener{
-        Toast.makeText(this, "Button Clicked", Toast.LENGTH_LONG).show()
     }
 
     val positiveButtonCLickListener = View.OnClickListener{
-        Toast.makeText(this, "Button Clicked", Toast.LENGTH_LONG).show()
     }
     val negativeButtonCLickListener = View.OnClickListener{
-        Toast.makeText(this, "Button Clicked", Toast.LENGTH_LONG).show()
 
     }
 }
