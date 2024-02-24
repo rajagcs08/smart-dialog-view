@@ -53,7 +53,7 @@ afterEvaluate{
             create<MavenPublication>("release"){
                 groupId = "com.github.rajagcs08"
                 artifactId ="smart-dialog-view"
-                version = "1.0.4"
+                version = "1.0.5"
                 pom {
                     var description = "Smart Dialog View Android Library"
                 }
