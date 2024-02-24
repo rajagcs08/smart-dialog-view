@@ -73,10 +73,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     val neutralButtonCLickListener =  View.OnClickListener{
+
     }
 
     val positiveButtonCLickListener = View.OnClickListener{
+
     }
+
     val negativeButtonCLickListener = View.OnClickListener{
 
     }

@@ -22,9 +22,9 @@ class SmartAlertDialog {
         private var positiveButton: PositiveButton?=null
         private var negativeButton: NegativeButton?=null
         private var neutralButton: NeutralButton?=null
-        private var category: DialogCategory?=DialogCategory.INFORMATION
-        private var style: DialogStyle?=DialogStyle.CURVED
-        private var dialogPosition:DialogPosition?=DialogPosition.BOTTOM
+        private var category: Int?=DialogCategory.INFORMATION
+        private var style: Int?=DialogStyle.CURVED
+        private var dialogPosition:Int?=DialogPosition.BOTTOM
         private var isCancelable:Boolean ?= true
 
         fun setTitle(title:String):Builder{
@@ -68,17 +68,17 @@ class SmartAlertDialog {
             return this
         }
 
-        fun setDialogCategory(category: DialogCategory):Builder{
+        fun setDialogCategory(category: Int):Builder{
             this.category = category
             return this
         }
 
-        fun setDialogStyle(style: DialogStyle):Builder{
+        fun setDialogStyle(style: Int):Builder{
             this.style = style
             return this
         }
 
-        fun setDialogPosition(dialogPosition: DialogPosition):Builder{
+        fun setDialogPosition(dialogPosition: Int):Builder{
             this.dialogPosition = dialogPosition
             return this
         }

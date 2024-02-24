@@ -32,9 +32,9 @@ internal class SmartCurvedAlertDialog(
     val positiveButton: PositiveButton?,
     val negativeButton: NegativeButton?,
     val neutralButton: NeutralButton?,
-    val category: DialogCategory? = DialogCategory.INFORMATION,
-    val style: DialogStyle? = DialogStyle.CURVED,
-    val dialogPosition: DialogPosition? = DialogPosition.BOTTOM,
+    val category: Int? = DialogCategory.INFORMATION,
+    val style: Int? = DialogStyle.CURVED,
+    val dialogPosition: Int? = DialogPosition.BOTTOM,
     var isCancelable: Boolean? = true
 ) : DialogFragment() {
 

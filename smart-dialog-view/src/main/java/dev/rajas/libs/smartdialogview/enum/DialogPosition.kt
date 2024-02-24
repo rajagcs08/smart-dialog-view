@@ -1,7 +1,16 @@
 package dev.rajas.libs.smartdialogview.enum
 
-enum class DialogPosition {
-    TOP,
-    CENTER,
-    BOTTOM
+public class DialogPosition {
+    companion object {
+
+        @JvmField
+        val TOP:Int = 0x12D
+
+        @JvmField
+        val CENTER:Int = 0x12E
+
+        @JvmField
+        val BOTTOM:Int = 0x12F
+
+    }
 }
