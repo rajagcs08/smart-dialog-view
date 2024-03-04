@@ -49,6 +49,16 @@ SmartAlertDialog.Builder(supportFragmentManager,this)
 ```
 Output will be like this
 
-![](https://github.com/rajagcs08/smart-dialog-view/blob/master/images/output_success.jpg)
+<img src="https://github.com/rajagcs08/smart-dialog-view/blob/master/images/output_success.jpg" alt="Alt Text" style="width: 256px; height: auto;"/>
+
+## Customizable options
+
+| **S.No**| **Options** | **Description** |
+|---------|-------------|-----------------|
+| 1 | setTitle | Input will be a String, and the given String will be displayed as the title of the dialog. |
+| 2 | setContent | Input will be a String, and the given String will be displayed as the message of the dialog. |
+| 3 | setTitleColor | Input will be a color integer, and the given color will be applied to the dialog title. |
+| 4 | setContentColor |  Input will be a color integer, and the given color will be applied to the dialog message. |
+
 
 
